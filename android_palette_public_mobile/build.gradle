@@ -4,17 +4,14 @@ plugins {
     id 'maven-publish'
 }
 
-project.ext.set("versionCode", 0001)
-project.ext.set("versionName", "0.0.1")
-
 android {
     compileSdk 32
 
     defaultConfig {
         minSdk 21
         targetSdk 32
-        versionCode project.versionCode
-        versionName project.versionName
+        versionCode 10003
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -53,7 +50,7 @@ afterEvaluate {
 
                 groupId = 'com.github.QuickChangeSpidey'
                 artifactId = 'android-palette-publicMobile'
-                version = rootProject.version
+                version = '1.0.3'
             }
         }
     }
