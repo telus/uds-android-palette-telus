@@ -12,19 +12,9 @@ jobs:
     steps:
       - name: checkout branch
       - uses: actions/checkout@v2
-      - name: set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - name: Get Android version
-        uses: ltDino/android-get-version-action@v1.0
-        with:
-          gradlePath: app/build.gradle
       - name: 'Android autobump version'
         uses: 'MattiaFailla/android-version-autobump-action@main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          target-branch: 'main'
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
-
