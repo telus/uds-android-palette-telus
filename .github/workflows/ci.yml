@@ -24,12 +24,8 @@ jobs:
         uses: chkfung/android-version-actions@v1.1
         with:
           gradlePath: android_palette_public_mobile/build.gradle # or app/build.gradle.kts
-          versionCode: ${{github.run_number}}
-          versionName: 1.0.0
       - name: Publish
         id: publish
         run: |
           git config --global user.email "akshay.pandey@telus.com"
           git config --global user.name "QuickChangeSpidey"
-          git tag "`${{github.run_number}}`"
-          git push --tags
