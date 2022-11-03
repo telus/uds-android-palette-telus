@@ -21,11 +21,11 @@ jobs:
         uses: ltDino/android-get-version-action@v1.0
         with:
           gradlePath: app/build.gradle # or app/build.gradle.kts 
-      - name: Get old version
-        run: |
-          echo "The versionCode was ${{ steps.test.outputs.versionCode }}"
-          echo "The versionName was ${{ steps.test.outputs.versionName }}"
-          - name: 'Android autobump version'
+      # - name: Get old version
+      #   run: |
+      #     echo "The versionCode was ${{ steps.test.outputs.versionCode }}"
+      #     echo "The versionName was ${{ steps.test.outputs.versionName }}"
+      - name: 'Android autobump version'
         uses: 'MattiaFailla/android-version-autobump-action@main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
