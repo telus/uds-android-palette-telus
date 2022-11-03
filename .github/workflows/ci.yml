@@ -29,6 +29,8 @@ jobs:
       - name: Publish
         id: publish
         run: |
+          git config --global user.email "akshay.pandey@telus.com"
+          git config --global user.name "QuickChangeSpidey"
           git add .
           git commit -m "version incremented"
           git push
