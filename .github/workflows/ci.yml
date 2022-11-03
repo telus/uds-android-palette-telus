@@ -17,14 +17,9 @@ jobs:
         with:
           java-version: 1.8
       - name: Get Android version
-        id: test
         uses: ltDino/android-get-version-action@v1.0
         with:
-          gradlePath: app/build.gradle # or app/build.gradle.kts 
-      # - name: Get old version
-      #   run: |
-      #     echo "The versionCode was ${{ steps.test.outputs.versionCode }}"
-      #     echo "The versionName was ${{ steps.test.outputs.versionName }}"
+          gradlePath: app/build.gradle
       - name: 'Android autobump version'
         uses: 'MattiaFailla/android-version-autobump-action@main'
         env:
