@@ -27,12 +27,12 @@ jobs:
         id: version-bump
         uses: 'MattiaFailla/android-version-autobump-action@main'
         with:
-          GRADLE_PATH: 'app/build.gradle'
+          GRADLE_PATH: 'android_palette_public_mobile/build.gradle'
           commit-message: 'CI: bumps android version to {{version}}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'cat build.gradle after version patch'
-        run: cat app/build.gradle
+        run: cat android_palette_public_mobile/build.gradle
       - name: 'Output Step'
         env:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
