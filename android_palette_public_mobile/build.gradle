@@ -53,7 +53,7 @@ afterEvaluate {
 
                 groupId = 'com.github.QuickChangeSpidey'
                 artifactId = 'android-palette-publicMobile'
-                version = project.versionName
+                version = rootProject.version
             }
         }
     }
